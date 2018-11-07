@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<style type="text/css">
+*{
+  padding: 0;
+  margin: 0;
+}
+.box{
+  float: left;
+  position: relative;
+  margin:20px 0 0 120px;
+  width: 900px;
+  height: 640px;
+  border: 1px solid #ccc; 
+}
+.test{
+  position: absolute;
+  top:60px;
+  width: 60px;
+  line-height: 60px;
+  text-align: center;
+  background:  rgb(240,128,128);
+}
+.test:first-child{
+  top:0;
+  background:Sienna;
+  border-radius: 50%;
+}
+.test:last-child{
+  top:120px;
+  background: DarkGoldenrod;
+}
+.button{
+  float: left;
+  margin:40px;
+}
+.button button{
+  display: block;
+  width: 160px;
+  height: 24px;
+  margin: 10px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  background:Firebrick;
+  color:#eee;
+
+}
+</style>
+</head>
+<body>
+  <div class="button">
+    <button onclick="history.go()">回退</button>
+    <button>加速旋转透明</button>
+    <button>两个同时不同速度</button>
+    <button>向右再向下颜色发生变化</button>
+    <button>3d运动</button>
+  </div>  
+  <div class="box">
+    <div class="test">round</div>
+    <div class="test">block</div>
+    <div class="test">block</div>
+  </div>
+</body>
+<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="velocity.min.js"></script>
+<script>
+  $('.test').eq(0).velocity({left: "840px"}, { duration:1000,queue: "a" }).velocity({top: "580px"}, { duration:2000,queue: "b" });
+  $('button').eq(3).click(function(){
+     $('.test').eq(0).dequeue("a");
+  })
+  $('button').eq(4).click(function(){
+    $('.test').eq(0).dequeue("b");
+  })
+ /* setTimeout(function() {
+      $('.test').eq(0).dequeue("a");
+  }, 4000);//先等待3000再运动1000最后运动2000（以setTimeout为准）
+  setTimeout(function() {
+      $('.test').eq(0).dequeue("b");
+  }, 6000);
+    $('button').eq(3).click(function(){
+  });*/
+</script>
+</html>

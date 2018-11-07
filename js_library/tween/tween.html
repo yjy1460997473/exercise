@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<style type="text/css">
+*{
+	padding: 0;
+	margin: 0;
+}
+.box{
+	float: left;
+	position: relative;
+	margin:20px 0 0 120px;
+	width: 900px;
+	height: 640px;
+	border: 1px solid #ccc; 
+}
+.test{
+	position: absolute;
+	top:60px;
+	width: 60px;
+	line-height: 60px;
+	text-align: center;
+	background:  rgb(240,128,128);
+}
+.test:first-child{
+	top:0;
+	background:Sienna;
+	border-radius: 50%;
+}
+.test:last-child{
+	top:120px;
+	background: DarkGoldenrod;
+}
+.button{
+	float: left;
+	margin:40px;
+}
+.button button{
+	display: block;
+	width: 120px;
+	height: 24px;
+	margin: 10px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	border-radius: 20px;
+	background:Firebrick;
+	color:#eee;
+
+}
+</style>
+</head>
+<body>
+	<div class="button">
+		<button onclick="history.go()">回退</button>
+		<button>加速旋转透明</button>
+		<button>两个同时不同速度</button>
+		<button>曲线运动</button>
+		<button>3d运动</button>
+		<button>开始</button>
+		<button>停止</button>
+	</div>	
+	<div class="box">
+		<div class="test">round</div>
+		<div class="test">block</div>
+		<div class="test">block</div>
+	</div>
+</body>
+<script type="text/javascript" src="Tween.min.js"></script>
+<script src="RequestAnimationFrame.js"></script>
+<script type="text/javascript">
+	/*新建两个盒子
+	一个放按钮
+	一个做动画*/
+	var button=document.getElementsByTagName('button');
+	var test=document.getElementsByClassName('test');
+	var r=260;
+	var position = {x: 0,rotation: 0, opacity:1 }; 
+	var position2 = {x: 0,r: 240,g: 128,b: 128}; 
+	var position3 = {x: 0,y: 0, reg: 0};
+	var position4 = {x: 0,borderRadius:0,rotateY:0};
+	var position5 = {x:0,scaleX:1,scaleY:1,skew:0}
+	var tweenx;
+	button[1].onclick=function(){
+		init();
+		animate();
+	};
+	button[2].onclick=function(){
+		init();
+		init2();
+		animate();
+	};
+	button[3].onclick=function(){
+		init3();
+		animate();
+	}
+	button[4].onclick=function(){
+		init4();
+		animate();
+	};
+	button[5].onclick=function(){		
+		init5();
+		animate();
+	};
+	button[6].onclick=function(){
+		tweenx.stop();
+	};
+	function animate( time ) {//运动条件
+		//var id=setTimeout(animate,16);//可以代替下面的
+		var id = requestAnimationFrame(animate);
+		var result = TWEEN.update(time);
+		if(!result) cancelAnimationFrame(id);
+	}
+	function init() {
+		var	tween = new TWEEN.Tween(position)
+				.to({x: 840, rotation: 720, opacity: 0.2}, 2000)//改变参数
+				.repeat(1)//重复1次 完成一次后再一次repeat(Infinity)永远
+				.yoyo(true)//这个函数只在你使用repeat方法是起作用。当它被激活时，tween的效果类似yoyo效果。该效果是动画会在开始或结束处向反方向反弹。
+				.delay(500)//停留500毫秒 delay方法用于控制动画之间的延时。
+				.easing(TWEEN.Easing.Quartic.In)//easing函数运动方式
+				.onComplete(function(){console.log("完成")})//在tween动画全部结束后执行。
+				.onUpdate(update)//这的update与animate中的update不同。在tween每次被更新后执行。
+				.start();//开始运动
+	}
+	function update() {
+		test[0].style.left = position.x + 'px';
+		console.log(position4.x)
+		test[0].style.opacity = position.opacity ;
+		test[0].style.transform = 'rotate(' + Math.floor(position.rotation) + 'deg)';	
+	}	
+	function init2() {
+		var	tween = new TWEEN.Tween(position2)
+			.to({x: 840,r: 50,g: 200,b: 50}, 2000)//改变参数
+			.repeat(1)
+			.yoyo(true)
+			.delay(500)//停留500毫秒 delay方法用于控制动画之间的延时。
+			.easing(TWEEN.Easing.Sinusoidal.In)//easing函数运动方式
+			.onUpdate(update2)
+			.start();//开始运动
+		}
+	function update2() {
+		test[1].style.left = position2.x + 'px';
+		test[1].style.background = 'rgb('+position2.r+','+position2.g+','+position2.b+')';
+	}
+	function init3() {
+		var	tween = new TWEEN.Tween(position3)
+			.to({x: 0 ,y: 0, reg: 180}, 2000)//改变参数
+			.easing(TWEEN.Easing.Linear.None)//easing函数运动方式
+			.onUpdate(update3)
+			.start();//开始运动
+	}
+	function update3() {
+		var x3=r*Math.cos((position3.reg-90)*Math.PI/180);
+		var y3=r+60+r*Math.sin((position3.reg-90)*Math.PI/180);
+		test[1].style.left = x3 + 'px';
+		test[1].style.top = y3 + 'px';
+	}
+	function init4() {
+		var tween = new TWEEN.Tween(position4)
+			.to({x:140,borderRadius: 30,rotateY:0}, 2000)
+			.easing(TWEEN.Easing.Sinusoidal.In)
+			.onUpdate(update4);
+		var tweenB = new TWEEN.Tween(position4)
+			.to({x:840,rotateY:360}, 3000)
+			.delay(1000)
+			.easing(TWEEN.Easing.Sinusoidal.In)
+			.onUpdate(update4);
+			tween.chain(tweenB);
+			tweenB.chain(tween);
+			tween.start();//开始
+	}
+	function update4() {
+		test[1].style.left = position4.x + 'px';	
+		test[1].style.borderRadius = Math.floor(position4.borderRadius) + 'px';
+		test[1].style.transform = 'rotateY('+Math.floor(position4.rotateY)+'deg)';
+	}
+	function init5(){
+		tweenx = new TWEEN.Tween(position5)
+		.to({x:720,scaleX:2,scaleY:2,skew:60},5000)
+		.repeat(Infinity)
+		.yoyo(true)
+		.easing(TWEEN.Easing.Sinusoidal.In)
+		.onUpdate(update5)
+		tweenx.start();//开始
+	}
+	function update5() {
+		test[2].style.left = position5.x + 'px';
+		test[2].style.transform ='scale('+ position5.scaleX+','+position5.scaleY+') skew('+Math.floor(position5.skew)+'deg)';//transform要放一起写否则后面会覆盖前面
+		//test[2].style.transform = 'skew('+Math.floor(position5.skew)+'deg)';
+	}
+</script>
+</html>

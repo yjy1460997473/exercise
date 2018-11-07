@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<style type="text/css">
+*{
+	padding: 0;
+	margin: 0;
+}
+.box{
+	position: absolute;
+	left: 50%;
+	top: 20px;
+	transform: translateX(-50%);
+	width: 900px;
+	height: 640px;
+	border: 1px solid #ccc; 
+}
+.test{
+	position: absolute;
+	top:60px;
+	width: 60px;
+	line-height: 60px;
+	text-align: center;
+	background:  rgb(240,128,128);
+}
+.test:first-child{
+	top:0;
+	background:Sienna;
+	border-radius: 50%;
+}
+.test:last-child{
+	top:120px;
+	background: DarkGoldenrod;
+}
+.button{
+	float: left;
+	margin:40px;
+}
+.button button{
+	display: block;
+	width: 160px;
+	height: 24px;
+	margin: 10px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	border-radius: 20px;
+	background:Firebrick;
+	color:#eee;
+
+}
+.scroll{
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top:100%;
+	width: 100px;
+	padding: 0 5px;
+	border:1px solid #ccc;
+}
+</style>
+</head>
+<body>
+	<div class="button">
+		<button onclick="history.go()">回退</button>
+		<button>加速旋转透明</button>
+		<button>两个同时不同速度</button>
+		<button>突然改变</button>
+		<button>向右再向下颜色发生变化</button>
+		<button>3d运动三次</button>
+		<button>贝塞尔曲线</button>
+		<button>progress动画执行调用</button>
+		<button>Fade & Slide</button>
+		<button>Hook</button>
+	</div>	
+	<div class="box">
+		<div class="test">round</div>
+		<div class="test">block</div>
+		<div class="test">block</div>
+	</div>
+	<div class="scroll">
+	<p id="one">	当清晨的一缕阳光透过窗帘上的空隙映照在沉睡的脸庞时，微微张开的双眼朦胧地注视着周遭的一切，新的一天悄然而至。<br>
+
+　　——题记</p>
+
+　　<p id="two">时光的单车飞快驶去，岁月的倒影也将消失，白天与黑夜不停的交替，轮回的四季斑驳了谁的岁月，蹉跎了谁的年华。一个人静静地与岁月交错，于平淡之中细细体会生活的深意，去注视，去聆听，去感受那些带着希望的别离以及那些经受沧桑的相逢，不论时光如何飞转，那些落花一样的往事，依然鲜活地存在于我的脑海之中。当岁月和美丽的回忆已成为风中的叹息，我们伤感的眼里也许依然残存旧时的泪痕，模糊了视线，不敢轻易触碰。</p>
+
+　　<p id="three">生活的列车慢慢的前进，有些人下去，也有人上去，不慌不忙的过着行云流水的日子，有的人知道自己的前方在哪里停靠，生活充实而安逸，有些人庸庸碌碌的过着不起波澜的日子，每天无头鸟似的瞎忙，朦胧的眼神向世界宣告着昏暗思想，一个个皮囊悬浮在空气中，没有生机的灵魂过着糜烂的时间。没有归属，无处生根。有时我们在迷茫青春的时候，日子也慢慢地溜走，不留一点痕迹。</p>
+
+　　<p id="four">时光不可阻挡，岁月交错中总要有些思量。人生只有在不短的思考中才会有所进步，有所追求，有了目标的人生才不会孤独和无助，只有让自己的心静下来时一些前方的东西才会明朗的展现在我们的面前。让我们不再迷惑于为所谓的挣扎中，谁的年华没有色彩，谁的青春没有耀眼的光芒，只是在岁月的长河里我们的选择不同，所得到的结局就不同，每个人都需要努力才会得到一切自己所要追求的东西和梦想。</p>
+
+　　<p id="five">生命无常，人生苦短，记忆的时光中我们匆匆走过，走过喧嚣，走过孤寂，时光无情地带走了我们的青春年少，还好我们都在坚持着内心的宁静，岁月的年轮缓缓的从我们身边碾过，往事一幕幕铺陈，让我的生活回忆不至于那么的枯燥，一些美好的记忆还依然鲜活地根植在我的脑海之中。消逝不去，本不该怀旧的年纪，可是我们学不会遗忘，日日夜夜的想念，带着些许的小寂寞，心有不甘常常在无人的街角大声的长啸，发泄着内心的声音，有时候我们会选择相信宿命，认为人与人之间的相遇，就像是上天早已做了安排，人谁也逃不过岁月时光刻下的印迹。</p>
+
+　　<p id="six">时光荏苒，蹉跎了谁的年华，匆匆行走的岁月长河中，有些人只顾着追寻他人的脚步，忘记了自己的方向，忘记了自己的目标和理想，有些人几顾思量不敢走出自己的道路，因而迷失了方向。迷失了自己。有些人默默坚守，把青春的岁月包裹在温热的怀里，载着它踏上梦想的征途，不留一丝遗憾。不留一点别人靠近的距离，就像是陈孝正为自己规划的一厘米的差距，人生没有从头来过的权利。亦没有后悔的权利，做过的事情，不管有些怎样的结局都会成为过往，我们纵使一味的活在过去的时光里也不会改变一点点发生的故事，向着远方，努力的看看前方的路才是对我们自己的肯定，只有心存希望，才会有拼搏的勇气，才有希望去走更远的路，因为值得，所以一路前行.</p>
+
+　　<p>那一路上的心酸往事，慢慢的沉淀在内心平和的深处！</p>
+	<button id="top">回顶</button>
+	</div>
+</body>
+<!-- <script type="text/javascript" src="jquery-3.3.1.min.js"></script> -->
+<script type="text/javascript" src="velocity.min.js"></script>
+<script type="text/javascript" src="velocity.ui.min.js"></script>
+<script>
+	//用了jquery的用velocity不用的加Velocity
+	/*$element.velocity({
+    	width: "500px",        // 动画属性 宽度到 "500px" 的动画
+    	property2: value2      // 属性示例
+	}, {
+     //Velocity 动画配置项的默认值 
+    	duration: 400,         // 动画执行时间
+    	easing: "swing",       // 缓动效果
+    	queue: "",             // 队列
+    	begin: undefined,      // 动画开始时的回调函数
+    	progress: undefined,   // 动画执行中的回调函数（该函数会随着动画执行被不断触发）
+    	complete: undefined,   // 动画结束时的回调函数
+    	display: undefined,    // 动画结束时设置元素的 css display 属性
+    	visibility: undefined, // 动画结束时设置元素的 css visibility 属性
+    	loop: false,           // 循环
+    	delay: false,          // 延迟
+    	mobileHA: true         // 移动端硬件加速（默认开启）
+	});*/
+	/*{
+	    //translate 
+	    translateX: 20,     // 等同于"20px"
+	    translateY: "1.5em",
+	    translateZ: "20px", // IE10+
+	    //scale 
+	    scale: 0.5,
+	    scaleX: 0.5,
+	    scaleY: 0.5,
+	    //rotate 
+	    rotate: 45,       // 等同于"45deg"
+	    rotateX: "45deg", // IE10+
+	    rotateY: "45deg", // IE10+
+	    rotateZ: "45deg",
+	    //skew 
+	    skewX: "30deg",
+	    skewY: "30deg",
+	}*/
+	/*$('button').eq(1).click(function(){
+  		$(".test").velocity({
+    		left: "440px",
+    		scale: 2,
+		},{
+			duration:2000
+		})
+	});*/
+	var button=document.getElementsByTagName('button');
+	var test=document.getElementsByClassName('test');
+	button[1].onclick=function(){
+		Velocity(test[0],{
+      		left: "840px",
+      		opacity:.2,
+	    	rotateZ: "720deg"
+  		}, {
+      		duration:2000,
+      		delay: 1500//延迟1500毫秒
+  		}); 
+	}
+	button[2].onclick=function(){
+		Velocity(test[0],{left: "840px"}, {duration:2000,easing:"easeInSine"}); 
+  		Velocity(test[1],{left: "840px"}, {duration:2000,easing:"easeOutSine"});  
+  	//引入有链式的库时可用点连起来
+  	/*$element
+    //先执行宽度变为75px的动画 
+    .velocity({left: "840px"}, {duration:2000,easing:"easeInSine"})
+    //等前面的宽度动画结束后，再执行高度变为0的动画 
+    .velocity({left: "840px"}, {duration:2000,easing:"easeOutSine"});
+	};*/
+	//你可以通过设置queue: false 强制并行执行一个新动画：
+	//loop循环选项 和reverse反向动画指令，不能和队列一起使用。
+	};
+	button[3].onclick=function(){
+		Velocity(test[0],{left: "810px"}, {duration:3000,easing:"linear"}); 
+		setTimeout(function() {
+    		/* 1.5秒后 开始并行执行高度变为"50px"的新动画 */
+    		Velocity(test[0],{ scale: 2,top:"240px" }, { duration: 1500, queue: false });
+		}, 1500);
+	};
+	/*$('.test').eq(0).velocity({left: "840px"}, { duration:1000,queue: "a" }).velocity({top: "580px"}, { duration:2000,queue: "b" });
+	setTimeout(function() {
+  		$('.test').eq(0).dequeue("a");
+	}, 4000);//先等待3000再运动1000最后运动2000（以setTimeout为准）
+	setTimeout(function() {
+  		$('.test').eq(0).dequeue("b");
+	}, 6000);
+		$('button').eq(3).click(function(){
+	});
+	//这样就不会有时间限制
+	$('button').eq(4).click(function(){
+     	$('.test').eq(0).dequeue("a");
+  	})
+  	$('button').eq(5).click(function(){
+    	$('.test').eq(0).dequeue("b");
+  	})*/
+	button[4].onclick=function(){
+		Velocity(test[0],{left: "840px",backgroundColor:'#96CDCD'}, {duration:2000})
+		Velocity(test[0],{top: "580px",backgroundColor:'#4EEE94'}, {duration:2000})
+	}
+	/*Velocity 颜色动画 支持的颜色属性有:color, backgroundColor, borderColor, outlineColor。 属性值支持:rgb, hsla, 十六进制颜色码，但不支持关键词 比如:"green"
+	$element.velocity({
+    backgroundColor: "#ff0000",
+    //背景色 RGBA 中的 A 透明度到50%  
+    backgroundColorAlpha: 0.5,
+    //字体颜色 RGB 中的 Red 到 50% (0.5 * 255) 
+    colorRed: "50%",
+    //字体颜色 RGB 中的 Blue 值叠加50 
+    colorBlue: "+=50",
+    //字体颜色 RGBA 中的 A 透明度到85% 
+    colorAlpha: 0.85});*/
+    button[5].onclick=function(){
+    	Velocity(test[0],{left: "840px",rotateY:"360deg"},{duration:2000,loop:3,begin: function() { console.log("开始")}});
+    	//为动画开始前的回调函数，但在循环模式下（设置了loop选项时），该函数只会在第一次循环前执行一次。loop循环次数loop:true一直循环
+    	Velocity(test[1],{left: "840px",rotateX:"360deg"},{duration:2000,visibility: "hidden",complete: function() { console.log("结束") }});//这里visibility: "hidden"无效
+    	//为动画结束时的回调函数，在无限循环模式下（设置loop: true） 该回调函数将不会执行，但是有规定次数的循环模式下（比如设置设置loop: 3） 该回调函数 将只会在最后一次循环结束后 执行一次。
+    	Velocity(test[1],"reverse", { duration: 2000, display: "none" });
+    };//可以在动画执行结束后 动态设置元素的 css 属性:display或visibility：display 或 visibility 的值可以设为 css 中规定的其他值，比如 display: "inline-block"
+	//注意：当使用reverse方向动画指令时，display 和 visibility 选项都将被忽略。
+    //mobileHA可以设置是否开始移动端硬件加速， 默认值为true，你也可以通过设置 mobileHA: false关闭硬件加速
+    //如果不写属性值的单位, Velocity 会将像素(px)作为默认单位
+    /*Velocity 在 1.2.0+ 版本里增加了对 "px, em, rem, %, deg, vw/vh" 这些单位的支持， 如果不填写属性单位 默认单位还是"px"，但 "deg" 用于 rotateZ 属性时可以省略不写。 Velocity 还支持动态计算属性值，包括 "+, -, *, /"，还可以设置元素在动画执行前的初始值，看下面示例：
+    $element.velocity({
+    top: 50,                // 等同于 "50px"
+    left: "50%",
+    width: "+=5rem",        // 每次在当前值上叠加 5rem
+    height: "*=2"           // 每次在当前值上叠乘 2
+    color: ["#888", "#000"] // 每次动画执行前，color 的初始值都为"#000"（从"#000"过渡成"#888"）
+	});*/
+	button[6].onclick=function(){
+		Velocity(test[2], {left:840},{ duration: 2000,easing:[ 0.17, 0.67, 0.83, 0.67 ]});
+	};
+	//Velocity 的动画执行时间以毫秒为单位，并支持 jQuery 中的动画速度关键字: "slow","normal","fast"。
+	// 支持 jQuery 中的动画速度关键字：
+	//$element.velocity({ opacity: 1 }, { duration: "slow" });
+	/*jQuery UI 的缓动关键字（预定义在 Velocity 源码中）：
+	"linear"
+	"swing"
+	"spring"
+	"easeInSine"
+	"easeOutSine"
+	"easeInOutSine"
+	"easeInQuad"
+	"easeOutQuad"
+	"easeInOutQuad"
+	"easeInCubic"
+	"easeOutCubic"
+	"easeInOutCubic"
+	"easeInQuart"
+	"easeOutQuart"
+	"easeInOutQuart"
+	"easeInQuint"
+	"easeOutQuint"
+	"easeInOutQuint"
+	"easeInExpo"
+	"easeOutExpo"
+	"easeInOutExpo"
+	"easeInCirc"
+	"easeOutCirc"
+	"easeInOutCirc"
+	CSS3 的缓动关键字：
+	"ease"
+	"ease-in"
+	"ease-out"
+	"ease-in-out"
+	CSS3 贝塞尔曲线：
+	例如：[ 0.17, 0.67, 0.83, 0.67 ]
+	弹簧物理缓动（spring physics） 以2位数组的形式 [ tension, friction ] tension 最大值为 500，friction 最大为20， Spring Physics 
+	步骤缓动（step easings），以1位数组的形式 使动画通过指定的步骤过渡到结束值*/
+	/*//jQuery UI easings 
+	$element.velocity({ left:840 },{ duration: 2000,easing:"easeInSine"});
+	//CSS3 easings 
+	$element.velocity({ left:840 }, { duration: 2000,easing:"ease-in"});
+	//贝塞尔曲线 
+	$element.velocity({ left:840 }, { duration: 2000,easing:[ 0.17, 0.67, 0.83, 0.67 ]});
+	//弹簧物理 
+	$element.velocity({ left:840 }, { duration: 2000,easing:[ 250, 5 ]});
+	//step easing 
+	$element.velocity({ left:840 }, { duration: 2000,easing:[ 8 ]});*/
+	/*缓动可应用于单个属性
+	JavaScript
+	$element.velocity({
+    left: [ "840px", "linear" ], // left 使用 "linear"
+    width: [ "100px", [ 250, 15 ] ],        // width 使用 linear physics
+    height: "100px"
+	}, {
+    easing: "easeInSine" // 默认所有属性使用 "easeInSine"
+	});*/
+	/*自定义缓动函数 (Advanced)
+	如果你需要，还可以通过函数的形式注册自定义的缓动效果，函数将被扩展到$.Velocity.Easings对象上
+	JavaScript
+	// p：动画完成的百分比（十进制值）
+	// opts：传递到触发 .velocity() 调用的选项
+	// tweenDelta：补间
+	// (官网并没有详细说明如何使用，感兴趣的可以自己去查阅相关资料学习)
+	$.Velocity.Easings.myCustomEasing = function (p, opts, tweenDelta) {
+	    return 0.5 - Math.cos( p * Math.PI ) / 2;
+	};*/
+	/*progress为动画执行过程中调用的函数， 有elementscomplete, remaining,start, tweenValue5个参数：
+	elements：当前执行动画的元素，可以用$(elements)来获取
+	complete：整个动画过程执行到百分之多少，该值是递增的，注意：该值为一个十进制数值 并不带单位 (%)
+	remaining：整个动画过程还剩下多少毫秒，该值是递减的
+	start：动画开始时的绝对时间 (Unix time)
+	tweenValue：动画执行过程中 两个动画属性之间的补间值*/
+	button[7].onclick=function(){
+		//在动画执行前 动画引擎会先查询 DOM 以确定元素的初始值， Velocity 可以让用户自定义元素初始值 这样可以避免 DOM 查询。
+		/* left 初始值永远为840px 动画结束值为0px */
+		Velocity(test[2], {left:[0,840],opacity:.3,tween: 2000 },{ duration: 2000,
+			progress: function(elements, complete, remaining, start, tweenValue) {
+				console.log(elements);
+		        console.log((complete * 100) + "%");
+		        console.log(remaining+"ms");
+		        console.log(start+"ms");
+		        console.log(tweenValue);
+    		}});//加tween时tweenValue才有用
+	};
+	// 可以简写这些参数：
+    /*progress: function(elements, c, r, s, t) {
+        console.log("The current tween value is " + t)
+    }*/
+    //Stop 停止当前动画,设置stop: true, 可以停止并清空当前正在执行的整个动画队列
+    //Finish 停止并跳转到动画结束时的状态
+    //$element.velocity("finish");
+    button[8].onclick=function(){
+    	Velocity(test[1],"slideDown",{duration: 1000});
+    	//Slide 对应为:"slideUp"(收起) 和"slideDown"(展开)两个动画指令
+    	Velocity(test[2],"fadeOut",{duration: 1000},);
+    	//Fade 对应为:"fadeIn"(淡入) 和"fadeOut"(淡出) 两个动画指令
+    }
+    //"scroll"动画指令，比如常用的回顶动画 就可以使用这个指令：
+    var body=document.getElementsByTagName('body')[0];
+    var top = document.getElementById('top');
+    top.onclick=function(){
+    	Velocity(body,"scroll", { duration: 500, easing: "easeOutQuart" });
+    }  
+    //另外，当滚动整个浏览器窗口时 如果目标元素为<html>， 可以关闭硬件加速 设置mobileHA: false来避免 iOS 中可能出现的页面闪动问题。  
+    button[9].onclick=function(){
+    	console.log(Velocity.hook(test[2], "top")); 
+    };
+    //Hook 可以设置多个CSS属性中的单独一个值，比如 "boxShadow", "clip"等，作用与 jQuery 的$.css()方法相似
+    
+</script>
+</html>
